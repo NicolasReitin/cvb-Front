@@ -16,7 +16,6 @@ export default function Header({auth}) {
                                 <LogoClub 
                                 filePath="/assets/images/logo-cvb-black.png"
                                 />
-
                                 <MenuNavbar 
                                     auth={auth}
                                 />

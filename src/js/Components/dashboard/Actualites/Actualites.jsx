@@ -11,13 +11,15 @@ export default function Actualites() {
     const fetchActualites = async () => {
         try {
             const response = await axios.get('/api/dashboard');
-            setActualites(response.data.actualites);
+            if (response.status === 200) {
+              setActualites(response.data.actualites);
+            }
         } catch (err) {
             console.error(err);
         }
     };
     fetchActualites();
-}, []);4
+}, []);
 
 const addActualite = async (newActu) => {
     try {
