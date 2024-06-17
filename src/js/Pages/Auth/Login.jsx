@@ -28,7 +28,8 @@ export default function Login() {
 
         try {
             await axios.get('/sanctum/csrf-cookie') // cookie a receveoir avant le post login et logout
-            const response = await axios.post('/api/cvb-login', data)
+
+            const response = await axios.post('/cvb-login', data)
             // console.log(response.data);
             if (response.status === 200) {
                 if (response.data.loginSuccessful === true) {
