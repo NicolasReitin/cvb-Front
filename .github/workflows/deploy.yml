@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.USERNAME}}
           password: ${{ secrets.FTP_PASSWORD }}
           local_dir: ./dist
-          remote_dir: ${{ DEPLOYMENT_PATHFILE }}
+          remote_dir: ${{ secrets.DEPLOYMENT_PATHFILE }}
 
       # - name: SSH Deployment
       #   uses: saranraj3195/sparkout-deployment@v2
