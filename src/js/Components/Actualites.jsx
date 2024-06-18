@@ -32,6 +32,8 @@ export default function Actualites() {
         <div className="actualites">
           <h2>LES ACTUALITÉS</h2>
           <div className="flex justify-center mt-10">
+            {console.log(firstActu)}
+          {firstActu && (
             <div className="first-actu">
               <Link to={`/actualite/${firstActu.id}`}>
                 <div className='relative'>
@@ -42,6 +44,7 @@ export default function Actualites() {
                 <h3 className='ml-5 mt-1'><strong> {firstActu.titre} </strong></h3>
               </Link>
             </div>
+          )}
             
             <div className="others-actu flex flex-col gap-2 mt-8 ml-5">
               {
