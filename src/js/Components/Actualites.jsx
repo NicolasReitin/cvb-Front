@@ -32,7 +32,6 @@ export default function Actualites() {
         <div className="actualites">
           <h2>LES ACTUALITÉS</h2>
           <div className="flex justify-center mt-10">
-            {console.log(firstActu)}
           {firstActu && (
             <div className="first-actu">
               <Link to={`/actualite/${firstActu.id}`}>
