@@ -18,7 +18,7 @@ export default function Profile() {
 
     const handleLogout = async () => {
         try {
-            await axios.post('/api/cvb-logout');
+            await axios.post('/cvb-logout');
             // Redirigez l'utilisateur vers la page de connexion
         //   navigate('cvb-admin');
             window.location.href = '/cvb-admin';
