@@ -44,10 +44,9 @@ export default function Actualites() {
               </Link>
             </div>
           )}
-            
             <div className="others-actu flex flex-col gap-2 mt-8 ml-5">
-              {
-                Object.values(othersActu).map((actu) =>(
+              {othersActu && (
+                othersActu.map((actu) =>(
                   <div 
                   key={actu.id}
                   className='block-others-actus'>
@@ -57,6 +56,7 @@ export default function Actualites() {
                     </Link>                  
                   </div>
                 ))
+              )
               }
               <ButtonGold
                 href = '/actualites'

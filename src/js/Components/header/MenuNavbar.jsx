@@ -1,6 +1,6 @@
 import {Link } from 'react-router-dom';
 
-import React from 'react'
+import React, { useState } from 'react'
 import ButtonGold from '../ButtonGold'
 import "../../../sass/dashboard.scss"
 
@@ -8,11 +8,32 @@ import { useAuth } from '@/context/AuthContext'; // Importez useAuth
 
 export default function MenuNavbar({ /*auth*/ }) {
 // console.log(auth.user);
-  const { auth, adminIsLogged } = useAuth(); // Utilise le contexte d'authentification
+  const { adminIsLogged } = useAuth(); // Utilise le contexte d'authentification
+  const [isOpen, setIsOpen] = useState(false);
+  const [openSubMenu, setOpenSubMenu] = useState(null);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setOpenSubMenu(null);
+  };
+
+  const toggleSubMenu = (menu) => {
+    if (openSubMenu === menu) {
+      setOpenSubMenu(null);
+    } else {
+      setOpenSubMenu(menu);
+    }
+  };
 
   return (
     <>
-      <div>
+        {/* ------------------------------ Menu desktop ------------------------------ */}
+
+      <div className='menu-desktop'>
         <ul className='MenuNavbar mt-8'>
           <li>
             <Link to="/" className='itemMenu'>
@@ -45,7 +66,7 @@ export default function MenuNavbar({ /*auth*/ }) {
           </li>
           <li className='dropdown-item'>
               <div className='flex'>
-                <span className='whitespace-nowrap cursor-default'>Équipes Séniors</span>
+                <span className='whitespace-nowrap cursor-default'>Équipes séniors</span>
                 <div>
                   <img src="/assets/icones/arrow-down-yellow.png" />
                 </div>
@@ -67,7 +88,7 @@ export default function MenuNavbar({ /*auth*/ }) {
           </li>
           <li className='dropdown-item'>
               <div className='flex'>
-                <span className='whitespace-nowrap cursor-default'>Équipes Jeunes</span>
+                <span className='whitespace-nowrap cursor-default'>Équipes jeunes</span>
                 <div>
                   <img src="/assets/icones/arrow-down-yellow.png" />
                 </div>
@@ -126,6 +147,135 @@ export default function MenuNavbar({ /*auth*/ }) {
           )}
         </ul>
       </div>
+
+
+        {/* ------------------------------ Menu burger ------------------------------ */}
+      <div className="burger-menu">
+        <Link to="/">
+          <img src="/assets/images/logo-cvb-black.png" alt="Logo" className="menu-logo-burger" />
+        </Link>
+        <button onClick={toggleMenu} className="burger-button">
+          <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#303030" strokeWidth="2" strokeLinecap="butt" strokeLinejoin="arcs">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <nav className={`burger-nav ${isOpen ? 'open' : ''}`}>
+          <button onClick={closeMenu} className="close-button">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#303030" strokeWidth="2" strokeLinecap="butt" strokeLinejoin="arcs">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <ul>
+            <li>
+              <Link to="/" className='itemMenu' onClick={closeMenu}>
+                <span>Accueil</span>
+              </Link>
+            </li>
+            <li>
+              <Link to='/actualites' className='itemMenu' onClick={closeMenu}>
+                <span>Actualités</span>
+              </Link>
+            </li>
+            <li className='dropdown-item'>             
+              <span className='itemMenu' onClick={() => toggleSubMenu('club')}>
+                <span>Le club</span>
+                <img src="/assets/icones/arrow-down-yellow.png" />
+              </span>
+              {openSubMenu === 'club' && (
+                <ul className='submenu'>
+                  <li><Link to='/projet' onClick={closeMenu}>Le projet</Link></li>
+                  <li><Link to='/historique' onClick={closeMenu}>Historique</Link></li>
+                  <li><Link to='/organigramme' onClick={closeMenu}>Organigramme</Link></li>
+                  <li><Link to='/reglement' onClick={closeMenu}>Règlement intérieur</Link></li>
+                  <li><Link to='/statuts' onClick={closeMenu}>Les statuts de l'association</Link></li>
+                  <li><Link to='/planning' onClick={closeMenu}>Planning / entrainements</Link></li>
+                </ul>
+              )}
+            </li>
+            <li className='dropdown-item'>
+              <span className='itemMenu' onClick={() => toggleSubMenu('seniors')}>
+                <span>Équipes séniors</span>
+                <img src="/assets/icones/arrow-down-yellow.png" />
+                </span>
+              {openSubMenu === 'seniors' && (
+                <ul className='submenu'>
+                  <li><Link to='/equipe-senior/2' onClick={closeMenu}>Nationale 3 Masculine</Link></li>
+                  <li><Link to='/equipe-senior/3' onClick={closeMenu}>Prénationale Masculine</Link></li>
+                  <li><Link to='/equipe-senior/4' onClick={closeMenu}>Régionale Masculine</Link></li>
+                  <li><Link to='/equipe-senior/8' onClick={closeMenu}>Régionale Féminine</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>Départementales Masculines</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>Départementale Féminine</Link></li>
+                  <li><Link to='/equipe-senior/1' onClick={closeMenu}>Ufolep</Link></li>
+                  <li><Link to='/equipe-senior/9' onClick={closeMenu}>Volley assis</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>Loisirs</Link></li>
+                </ul>
+              )}
+            </li>
+            <li className='dropdown-item'>
+              <span className='itemMenu' onClick={() => toggleSubMenu('juniors')}>
+                <span>Équipes jeunes</span>
+                <img src="/assets/icones/arrow-down-yellow.png" />
+              </span>
+              {openSubMenu === 'juniors' && (
+                <ul className='submenu'>
+                  <li><Link to='#' onClick={closeMenu}>M13 Masculins</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>M15 Masculins</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>M18 Féminines</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>M18 Masculins</Link></li>
+                  <li><Link to='#' onClick={closeMenu}>M21 Masculins</Link></li>
+                </ul>
+              )}
+            </li>
+            <li className='dropdown-item'>
+              <span className='itemMenu' onClick={() => toggleSubMenu('partenaires')}>
+                <span>Partenaires</span>
+                <img src="/assets/icones/arrow-down-yellow.png" />
+              </span>
+              {openSubMenu === 'partenaires' && (
+                <ul className='submenu'>
+                  <li><Link to='/partenaires' onClick={closeMenu}>Nos partenaires</Link></li>
+                  <li><Link to='/devenez-partenaire' onClick={closeMenu}>Devenez partenaire</Link></li>
+                </ul>
+              )}
+            </li>
+            <li className='dropdown-item'>
+              <span className='itemMenu' onClick={() => toggleSubMenu('inscriptions')}>
+                <span>Inscriptions</span>
+                <img src="/assets/icones/arrow-down-yellow.png" />
+              </span>
+              {openSubMenu === 'inscriptions' && (
+                <>
+                  <ul className='submenu'>
+                    <li><Link to='/tarifs' onClick={closeMenu}>Tarifs</Link></li>
+                    <li><Link to='/modalites' onClick={closeMenu}>Modalités d'inscription</Link></li>
+                    <li><Link to='/modeEmploiLicence' onClick={closeMenu}>Comment remplir sa licence</Link></li>
+                    <li><Link to='/documentsDivers' onClick={closeMenu}>Documents divers</Link></li>
+                  </ul>
+                </>
+              )}
+            </li>
+            <li>
+              <Link to='/boutique' className='itemMenu' onClick={closeMenu}>
+                <span>Boutique</span>
+              </Link>
+            </li>
+            {adminIsLogged && (
+              <ButtonGold 
+                href='/dashboard'
+                content="Admin"
+                classNameButton="bouton-admin"
+              />
+            )}
+          </ul>
+        </nav>
+      </div>
+      
+
+
+      
     </>
   )
 }
