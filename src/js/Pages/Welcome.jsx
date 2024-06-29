@@ -25,7 +25,7 @@ export default function Welcome() {
 
         <div className="scores">
           <h2>SAVE <span>THE DATE </span>!</h2>
-          <div className='mt-16'>
+          <div className='mt-8 md:mt-12 lg:mt-16'>
             <iframe 
               id="65f4382f11d4460dd0e0c6a0" 
               title="Score'N'Co"

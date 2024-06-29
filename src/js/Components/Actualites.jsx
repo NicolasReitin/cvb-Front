@@ -31,7 +31,8 @@ export default function Actualites() {
     <>
         <div className="actualites">
           <h2>LES ACTUALITÉS</h2>
-          <div className="flex justify-center mt-10">
+          <div className="flex flex-col items-center lg:flex-row lg:justify-center mt-10">
+          {/* mt-8 md:mt-12 lg:mt-16 */}
           {firstActu && (
             <div className="first-actu">
               <Link to={`/actualite/${firstActu.id}`}>
@@ -44,15 +45,15 @@ export default function Actualites() {
               </Link>
             </div>
           )}
-            <div className="others-actu flex flex-col gap-2 mt-8 ml-5">
+            <div className="others-actu flex flex-col gap-2 mt-5 lg:mt-8 lg:ml-5">
               {othersActu && (
                 othersActu.map((actu) =>(
                   <div 
                   key={actu.id}
                   className='block-others-actus'>
                     <Link to={`/actualite/${actu.id}`}>
-                        <p className='ml-3'>Le { moment(actu.created_at).locale('fr').format('DD/MM/YYYY') }</p>
-                        <h3 className='ml-3 mt-2'><strong> { actu.titre }</strong></h3>
+                        <p className='lg:ml-3'>Le { moment(actu.created_at).locale('fr').format('DD/MM/YYYY') }</p>
+                        <h3 className='lg:ml-3 lg:mt-2'><strong> { actu.titre }</strong></h3>
                     </Link>                  
                   </div>
                 ))

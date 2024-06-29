@@ -283,5 +283,99 @@
         height: 4px;
         background: $bleuCVB;
     }
+}
+
+//________________________________________________________________
+// ______________________ Media queries __________________________
+//________________________________________________________________
+
+/* Media queries pour appareils tablettes */
+@media (max-width: 1024px) {
     
+}
+
+/* Media queries pour appareils mobiles */
+@media (max-width: 480px) {
+    // _____________________________ Photo intro ____________________________
+    .main-photo-cover{
+        img{
+            height: 25vh;
+        }
+    }
+    // _____________________________ Scores ____________________________
+    .scores{
+        width: 95%;
+        h2{
+            margin: 3% 0 3% 0%;
+            font-size: $sizeTitleMobile;
+        }    
+    }
+    // _____________________________ Atualités ____________________________
+    .actualites::after {
+        top: 2%; 
+        height: 100%;
+    }
+    .actualites{
+        margin: 0 auto;
+        width: 100%;
+        h2{
+            margin: 10% 0 10% 0%;;
+            font-size: $sizeTitleMobile;
+        }
+        .first-actu{
+            width: 100%;
+            margin: 0 auto;
+            min-width: 300px;
+            max-width: 480px;
+            min-height: 0px;
+            h3{
+                font-size: 18px;
+            }
+            img{
+                height: 300px;
+            }
+        }
+        .others-actu{
+            width: 100%;
+            min-width: 300px;
+            min-height: 0px;
+            margin-bottom: 20px;
+            .block-others-actus{
+                h3{
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 14px;
+                }
+            }
+            .all-actus {
+                bottom: -25px;
+                right: -5px;
+                font-size: 14px; 
+            }
+            
+        }
+    }    
+    // _____________________________ Réseaux ____________________________
+
+    .reseaux{
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 15%;    
+        h2{
+            position: relative;
+            margin: $marginTitle;
+            Font-family: $fontTitle;
+            font-size: $sizeTitleMobile;
+            color: $bleuCVB;
+            font-weight: 900;
+        }
+        img{
+            width: 100%;
+        }
+        .button-post{
+            font-size: 16px;
+        }
+    }
+
 }
