@@ -63,3 +63,31 @@ $animationSpeed: 50s;
         object-fit: contain; /* Utilisez 'contain' pour que l'image soit entièrement visible à l'intérieur de son conteneur sans déformation */
 	}
 }
+
+//________________________________________________________________
+// ______________________ Media queries __________________________
+//________________________________________________________________
+
+/* Media queries pour appareils mobiles */
+@media (max-width: 480px) {
+	.slider {
+		height: 100px;		
+		&::before, &::after {
+			height: 0px;
+			width: 0px;
+		}		
+		
+		.slide-track {
+			gap: 20px;
+			width: calc(250px * var(--translation-multiplier));
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.slide img{
+			margin-top: 0px;
+			max-height: 95px;
+			max-width: 100px;
+		}
+	}
+}

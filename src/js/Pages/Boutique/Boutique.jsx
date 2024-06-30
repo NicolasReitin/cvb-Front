@@ -23,7 +23,7 @@ export default function Boutique( {auth}) {
               <div className="riva-floc">
                 <h2>RIVA FLOC</h2>
                 <p>
-                  <a href="https://www.boutique-rivasport.fr/brand/caen-volley-ball/">Commander via ce lien</a>
+                  <a href="https://boutique-rivasport.fr/brand/caen-volley-ball/">Commander via ce lien</a>
                 </p>
                 <img src="/assets/images/boutique/rivasport.png" alt="boutique rivasport" />
               </div>

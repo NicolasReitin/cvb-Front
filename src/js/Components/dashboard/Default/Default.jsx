@@ -50,14 +50,14 @@ export default function Default() {
                 <div className="liens">
                     <a 
                         target='_blank'
-                        href="https://www.ffvbbeach.org/ffvbapp/weblic/acces_licences.php"
+                        href="https://ffvbbeach.org/ffvbapp/weblic/acces_licences.php"
                         className="button-raccourcis ffvolley"
                     >
                         Accès au site de la FF volley
                     </a>
                     <a 
                         target='_blank'
-                        href="https://www.ffvbbeach.org/ffvbapp/resu/planning_club_class.php?cnclub=0149419&x=10&y=10"
+                        href="https://ffvbbeach.org/ffvbapp/resu/planning_club_class.php?cnclub=0149419&x=10&y=10"
                         className="button-raccourcis ffvolley"
                     >
                         Accès aux classements

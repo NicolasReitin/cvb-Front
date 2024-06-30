@@ -17,12 +17,11 @@ export default function Footer() {
                 </svg>
             </div>
             <div className="footer">
-                <div className='flex justify-center gap-64'>
+                <div className='flex flex-col lg:flex-row lg:justify-center gap-4 lg:gap-64'>
                     <LogoClub 
                         filePath = "/assets/images/logo-cvb-white.png"                
                     />
                     <InfosPratiques />
-
                 </div>
                 <PoliciesMentions />
             </div>
