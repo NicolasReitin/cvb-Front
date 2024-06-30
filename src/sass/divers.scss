@@ -389,4 +389,28 @@ section{
             }
         }
     }   
+
+    // _____________________________ Patners _________________________
+    .partners-title{
+        font-size: 20px;
+    }
+    .partners{
+        width: 100%;
+        margin: 5% auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Ajouté pour centrer les éléments horizontalement */
+        flex-wrap: nowrap;
+        gap: 5%;
+        .partners a {
+            display: inline-block; /* Pour que les éléments a respectent la taille de leurs enfants */
+        }
+        img{
+            height: 100px; /* Taille fixe en hauteur */
+            width: 200px; /* Taille fixe en largeur */
+            object-fit: contain; /* Pour que l'image soit entièrement visible à l'intérieur de son conteneur sans déformation */
+            margin: 10px auto;
+        }
+    }
 }
