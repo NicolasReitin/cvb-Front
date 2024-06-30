@@ -37,12 +37,12 @@ export default function Boutique( {auth}) {
                 " />
                 <div className="bloc-tailles">
                   <div className="veste">
-                    <img src="/assets/images/boutique/dimension_maillot_short.png" alt="dimensions veste zippée" />
                     <h3>Dimensions Veste zippée</h3>
+                    <img src="/assets/images/boutique/tailles_veste_zippee.png" alt="dimensions maillot et short" />
                   </div>
                   <div className="maillot">
-                    <img src="/assets/images/boutique/tailles_veste_zippee.png" alt="dimensions maillot et short" />
                     <h3>Dimensions Maillot + Short</h3>
+                    <img src="/assets/images/boutique/dimension_maillot_short.png" alt="dimensions veste zippée" />
                   </div>
                 </div>
               </div>

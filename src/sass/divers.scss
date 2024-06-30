@@ -267,5 +267,126 @@ section{
 
 /* Media queries pour appareils mobiles */
 @media (max-width: 480px) {
-    
+    section{
+        img{
+            width: 100%;
+            min-width: 320px;
+            max-width: 480px;
+        }
+        h1{
+            white-space: pre-wrap !important;
+            margin: 3%;
+            font-size: $sizeTitleMobile !important;
+        }
+        .planning, .organigramme, .historique, .reglement, .statuts, .tarifs, .mode-emploi-icence, .devenez-partenaire{
+            margin: 10% 0%;
+            display: flex;
+            justify-content: center;
+        }
+        .reglement, .statuts, .tarifs, .mode-emploi-icence, .devenez-partenaire{
+            border-bottom: solid 1px rgb(153, 153, 153);
+        }
+        .projet{
+            margin: 0 auto;
+            width: 100%;
+            .intro{
+                padding: 3% 5%;
+                p{
+                    text-align: justify;
+                    line-height: 1.5;
+                    font-size: 16px;
+                }
+            }
+            .projet-content{
+                margin-top: 5%;
+                h3{
+                    text-align: left;
+                    margin: 2% 5%;
+                }
+                h4{
+                    text-align: justify;
+                    margin: 2% 5%;
+                }
+                p{
+                    padding: 0 5%;
+                    line-height: 1.5;
+                    text-align: justify;
+                }
+            }
+        }
+        .docs-divers{
+            margin-bottom: 3%;
+            ul{
+                flex-direction: column;
+                flex-wrap: nowrap;
+                gap: 0;
+                li{
+                    margin-top: 3%;
+                    text-align: center;
+                    iframe{
+                        margin: 0 auto;
+                        width: 95%;
+                        height: 350px;
+                    }
+                }
+                p{
+                    width: 60%;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    // _____________________________ Boutique ________________________
+
+    .boutique{
+        width: 95%;
+        .intro{
+            h3{
+                font-size: 22px;
+            }
+            p{
+                text-align: justify;
+                line-height: 1.5;
+                font-size: 16px;
+            }
+        }
+        .riva-floc{
+            margin-top: 5%;
+            h2{
+                font-size: 22px;
+            }
+            p{
+                font-size: 16px;
+            }
+            img{
+                max-width: 480px;
+            }
+        }
+        .ak-seven{
+            h2{
+                font-size: 22px;
+            }
+            p{
+                font-size: 16px;
+            }
+            img{
+                margin: 0 auto;
+                max-width: 480px;
+                width: 95%;
+            }
+            .bon-commande{
+                margin-top: 10%;
+                max-width: 480px;
+            }
+            .bloc-tailles{
+                margin-top: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h3{
+                    font-size: 20px;
+                }
+            }
+        }
+    }   
 }
