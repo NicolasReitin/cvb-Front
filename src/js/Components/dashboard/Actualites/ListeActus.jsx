@@ -77,7 +77,7 @@ export default function ListeActus( {actualites, setActualites} ) {
                     actualite && (
                     <tr key={actualite.id}>
                         <td className='w-8 text-center'>{actualite.id}</td>
-                        <td>{truncateContent(actualite.content, 50)}</td>
+                        <td>{truncateContent(actualite.titre, 50)}</td>
                         <td>{actualite.auteur}</td>
                         <td>
                             <img src={actualite.photo} alt='Photo actu' />
