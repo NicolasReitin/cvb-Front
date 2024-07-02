@@ -57,6 +57,12 @@ export default function ListeActus( {actualites, setActualites} ) {
         }
     }
 
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
   return (
     <>
         <div className="test">
@@ -77,12 +83,12 @@ export default function ListeActus( {actualites, setActualites} ) {
                     actualite && (
                     <tr key={actualite.id}>
                         <td className='w-8 text-center'>{actualite.id}</td>
-                        <td>{truncateContent(actualite.content, 50)}</td>
+                        <td>{truncateContent(decodeHtml(actualite.titre), 50)}</td>
                         <td>{actualite.auteur}</td>
                         <td>
                             <img src={actualite.photo} alt='Photo actu' />
                         </td>
-                        <td>{truncateContent(actualite.content, 150)}</td>
+                        <td>{truncateContent(decodeHtml(actualite.content), 150)}</td>
                         <td>
                             <button className='button-edit' onClick={() => handleEdit(actualite)}>
                                 <img src="/assets/icones/edit-button.png" alt="button edit" />
