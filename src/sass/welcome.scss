@@ -109,9 +109,8 @@
             border-bottom: solid 1px rgba(0, 0, 0, 0.199);
             width: 100%;
             height: 420px;
-            object-fit: cover;            
-            // min-height: 420px;
-            // max-height: 500px;
+            // object-fit: none;  géré par le javascript
+            object-position: center;          
         }
         //filtre image obscur
         .filtre-img{

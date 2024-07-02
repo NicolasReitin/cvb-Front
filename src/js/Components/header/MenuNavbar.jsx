@@ -77,11 +77,11 @@ export default function MenuNavbar({ /*auth*/ }) {
                     <Link to='/equipe-senior/3'><li>Prénationale Masculine</li></Link>
                     <Link to='/equipe-senior/4'><li>Régionale Masculine</li></Link>
                     <Link to='/equipe-senior/8'><li>Régionale Féminine</li></Link>
-                    <Link to="#"><li>Départementales Masculines</li></Link>
-                    <Link to="#"><li>Départementale Féminine</li></Link>
+                    <Link to="/equipe-senior/7"><li>Départementales Masculines</li></Link>
+                    <Link to="/equipe-senior/10"><li>Départementale Féminine</li></Link>
                     <Link to='/equipe-senior/1'><li>Ufolep</li></Link>
                     <Link to='/equipe-senior/9'><li>Volley assis</li></Link>
-                    <Link to="#"><li>Loisirs</li></Link>
+                    <Link to="/equipe-senior/11"><li>Loisirs</li></Link>
                   </ul>
                 </div>
               </div>
@@ -94,11 +94,11 @@ export default function MenuNavbar({ /*auth*/ }) {
                 </div>
                 <div className='dropdown-content w-44'>
                   <ul>
-                    <Link to="#"><li>M13 Masculins</li></Link>
-                    <Link to="#"><li>M15 Masculins</li></Link>
-                    <Link to="#"><li>M18 Féminines</li></Link>
-                    <Link to="#"><li>M18 Masculins</li></Link>
-                    <Link to="#"><li>M21 Masculins</li></Link>
+                    <Link to="/equipe-junior/2"><li>M13 Masculins</li></Link>
+                    <Link to="/equipe-junior/3"><li>M15 Masculins</li></Link>
+                    <Link to="/equipe-junior/4"><li>M18 Féminines</li></Link>
+                    <Link to="/equipe-junior/5"><li>M18 Masculins</li></Link>
+                    <Link to="/equipe-junior/6"><li>M21 Masculins</li></Link>
                   </ul>
                 </div>
               </div>
@@ -206,11 +206,11 @@ export default function MenuNavbar({ /*auth*/ }) {
                   <li><Link to='/equipe-senior/3' onClick={closeMenu}>Prénationale Masculine</Link></li>
                   <li><Link to='/equipe-senior/4' onClick={closeMenu}>Régionale Masculine</Link></li>
                   <li><Link to='/equipe-senior/8' onClick={closeMenu}>Régionale Féminine</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>Départementales Masculines</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>Départementale Féminine</Link></li>
+                  <li><Link to='/equipe-senior/7' onClick={closeMenu}>Départementales Masculines</Link></li>
+                  <li><Link to='/equipe-senior/10' onClick={closeMenu}>Départementale Féminine</Link></li>
                   <li><Link to='/equipe-senior/1' onClick={closeMenu}>Ufolep</Link></li>
                   <li><Link to='/equipe-senior/9' onClick={closeMenu}>Volley assis</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>Loisirs</Link></li>
+                  <li><Link to='/equipe-senior/11' onClick={closeMenu}>Loisirs</Link></li>
                 </ul>
               )}
             </li>
@@ -221,11 +221,11 @@ export default function MenuNavbar({ /*auth*/ }) {
               </span>
               {openSubMenu === 'juniors' && (
                 <ul className='submenu'>
-                  <li><Link to='#' onClick={closeMenu}>M13 Masculins</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>M15 Masculins</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>M18 Féminines</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>M18 Masculins</Link></li>
-                  <li><Link to='#' onClick={closeMenu}>M21 Masculins</Link></li>
+                  <li><Link to='/equipe-junior/2' onClick={closeMenu}>M13 Masculins</Link></li>
+                  <li><Link to='/equipe-junior/3' onClick={closeMenu}>M15 Masculins</Link></li>
+                  <li><Link to='/equipe-junior/4' onClick={closeMenu}>M18 Féminines</Link></li>
+                  <li><Link to='/equipe-junior/5' onClick={closeMenu}>M18 Masculins</Link></li>
+                  <li><Link to='/equipe-junior/6' onClick={closeMenu}>M21 Masculins</Link></li>
                 </ul>
               )}
             </li>

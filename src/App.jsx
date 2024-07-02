@@ -53,7 +53,8 @@ function App() {
           <Route path='/actualite/:actu' element={<Show />} />
 
           {/*---------------- Equipes ----------------*/}
-          <Route path='/equipe-senior/:equipe_id' element={<Equipes />} />
+          <Route path='/equipe-senior/:equipe_id' element={<Equipes equipeType="senior"/>} />
+          <Route path='/equipe-junior/:equipe_id' element={<Equipes equipeType="junior"/>} />
 
           {/*---------------- Divers ----------------*/}
           <Route path='/projet' element={<Projet />} />

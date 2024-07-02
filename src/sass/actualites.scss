@@ -90,7 +90,7 @@ section{
             img{
                 height: 350px;
                 min-width: 100%;
-                object-fit: cover;
+                // object-fit: cover; //géré par le javascript selon resolution de l'image
             }
             .filtre-img{
                 background-color: rgba(0,0,0,0.1);
@@ -154,7 +154,7 @@ section{
                 width: 100%;
                 height: auto;
                 max-height: 600px;
-                object-fit: cover;
+                // object-fit: cover; //géré par le javascript selon resolution de l'image
             }
             .filtre-img{
                 background-color: rgba(0,0,0,0.1);

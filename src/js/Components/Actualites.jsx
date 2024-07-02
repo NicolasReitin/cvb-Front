@@ -2,13 +2,10 @@ import {Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import ButtonGold from './ButtonGold'
 import moment from 'moment';
-
 import axios from '@/libs/axios';
 
 export default function Actualites() {
-
   const [othersActu, setOthersActu] = useState([]);
-
   const [firstActu, setFirstActu] = useState([]);
 
   useEffect(() =>{
@@ -17,15 +14,34 @@ export default function Actualites() {
       try {
         const response = await axios.get('/api/actualites')
         setOthersActu(response.data.othersActu)
-        setFirstActu(response.data.firstActu)
-              
+        setFirstActu(response.data.firstActu)     
       } catch (err) {
         console.error(err);
       }
     }
-
     fetchActualites();
   }, []);
+
+  useEffect(() => {
+    adjustImageFit();
+  }, [firstActu, othersActu]); // Réajuster chaque fois que les actualités changent
+
+  // fonction pour gérer le cover ou contain de l'img selon paysage ou portrait de l'image
+  const adjustImageFit = () => { 
+    const img = document.querySelector('.first-actu img'); 
+    if (img) {
+      img.onload = () => {
+        // Calculer le ratio de l'image
+        const ratio = img.naturalHeight / img.naturalWidth;
+        const threshold = 0.9; // Seuil pour décider proche portrait
+        img.style.objectFit = ratio < threshold ? 'cover' : 'contain';
+      };
+      // Si l'image est déjà chargée
+      if (img.complete) {
+        img.onload();
+      }
+    }
+  };
   
   return (
     <>

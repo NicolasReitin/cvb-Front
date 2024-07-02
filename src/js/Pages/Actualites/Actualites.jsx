@@ -13,7 +13,6 @@ import axios from '@/libs/axios';
 
 
 export default function Actualites({ auth }) {
-
     const [actualites, setActualites] = useState([]);
 
     useEffect(() =>{
@@ -21,14 +20,33 @@ export default function Actualites({ auth }) {
         const fetchActualites = async() => {
           try {
             const response = await axios.get('/api/actualites')
-            setActualites(response.data.actualites)
-                        
+            setActualites(response.data.actualites)           
           } catch (err) {
             console.error(err);
           }
         }
         fetchActualites();
     }, []);
+
+    useEffect(() => {
+        adjustImageFit();
+    }, [actualites]); // Réajuster chaque fois que les actualités changent
+
+    const adjustImageFit = () => {
+        const images = document.querySelectorAll('.card img');
+        images.forEach(img => {
+            const handleLoad = () => {
+                const ratio = img.naturalHeight / img.naturalWidth;
+                const threshold = 0.9; // Seuil pour décider proche portrait
+                img.style.objectFit = ratio < threshold ? 'cover' : 'contain';
+            };
+            if (img.complete) {
+                handleLoad();
+            } else {
+                img.onload = handleLoad;
+            }
+        });
+    };
 
 
   return (

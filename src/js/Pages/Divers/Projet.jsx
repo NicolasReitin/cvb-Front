@@ -17,7 +17,7 @@ export default function Projet({auth}) {
             <div className='projet'>
                 <div className='intro'>
                     <p>
-                    Le club accueille tout type de pratiquants pour se faire plaisir ou se confronter en compétition.
+                    Le club accueille tous types de pratiquants pour se faire plaisir ou se confronter en compétition.
                     </p>
                     <p>
                     Au Caen Volley-Ball, c'est le plaisir de partager un sport avec des moments de convivialité.
@@ -203,7 +203,7 @@ export default function Projet({auth}) {
                     <p>
                         Ce projet a pour but de favoriser l’accès aux pratiques sportives, celle du volley-ball en particulier, à toute personne éloignée du sport notamment dans « les quartiers », au sein desquels l'offre sportive est plus limitée. <br />
 
-                        En partenariat avec les maisons de quartiers et associations dédiées aux vies de quartiers, le Caen Volley Ball va mettre en place des actions de convivialité et de découverte autour de terrains de volley de tout type de surface. <br />
+                        En partenariat avec les maisons de quartiers et associations dédiées aux vies de quartiers, le Caen Volley Ball va mettre en place des actions de convivialité et de découverte autour de terrains de volley de tous types de surface. <br />
 
                         Il sera également mis en place une politique tarifaire favorable pour les personnes provenant de ces quartiers, notamment par le biais de nos licences évènementielles.
                     </p>
