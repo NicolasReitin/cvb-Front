@@ -21,6 +21,7 @@ export default function Welcome() {
           src='/assets/images/cover.webp'
           alt={"Caen Volley Ball Photo"}
           className={'main-photo-cover'}
+          loading='lazy'
         />
 
         <div className="scores">

@@ -75,7 +75,6 @@ function App() {
 
           {/*---------------- Boutique ----------------*/}
           <Route path='/boutique' element={<Boutique />} />
-
         </Routes>
       </AuthProvider>
   )
