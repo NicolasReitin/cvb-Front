@@ -68,7 +68,7 @@ export default function ListeActus( {actualites, setActualites} ) {
                 <th>Auteur</th>
                 <th>Photo</th>
                 <th>Contenu</th>
-                <th>Edit</th>
+                {/* <th>Edit</th> */}
                 <th>Delete</th>
               </tr>
             </thead>
