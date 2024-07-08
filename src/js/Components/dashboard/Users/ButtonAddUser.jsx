@@ -28,7 +28,7 @@ export default function ButtonAddUser( {addUserToStaff}) {
         console.log(formData);
 
         try {
-            const response = await axios.post('/api/user/create/', formData);
+            const response = await axios.post('/api/user/create', formData);
             if (response.status ===201){
                 // console.log('User created:', response.data);
                 alert(`L'utilisateur ${formData.name} a bien été créé`);
