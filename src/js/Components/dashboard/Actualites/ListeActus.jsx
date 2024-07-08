@@ -83,11 +83,11 @@ export default function ListeActus( {actualites, setActualites} ) {
                             <img src={actualite.photo} alt='Photo actu' />
                         </td>
                         <td>{truncateContent(actualite.content, 150)}</td>
-                        <td>
+                        {/* <td>
                             <button className='button-edit' onClick={() => handleEdit(actualite)}>
                                 <img src="/assets/icones/edit-button.png" alt="button edit" />
                             </button>
-                        </td>
+                        </td> */}
                         <td>
                             <button className='button-delete' onClick={() => handleDelete(actualite)}>
                                 <img src="/assets/icones/delete-button.png" alt="button delete" />
