@@ -68,8 +68,7 @@ export default function ListeActus( {actualites, setActualites} ) {
                 <th>Auteur</th>
                 <th>Photo</th>
                 <th>Contenu</th>
-                {/* <th>Edit</th> */}
-                <th>Delete</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -83,12 +82,10 @@ export default function ListeActus( {actualites, setActualites} ) {
                             <img src={actualite.photo} alt='Photo actu' />
                         </td>
                         <td>{truncateContent(actualite.content, 150)}</td>
-                        {/* <td>
+                        <td className="list-actus-actions">
                             <button className='button-edit' onClick={() => handleEdit(actualite)}>
                                 <img src="/assets/icones/edit-button.png" alt="button edit" />
                             </button>
-                        </td> */}
-                        <td>
                             <button className='button-delete' onClick={() => handleDelete(actualite)}>
                                 <img src="/assets/icones/delete-button.png" alt="button delete" />
                             </button>
