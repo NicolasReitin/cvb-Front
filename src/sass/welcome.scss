@@ -6,6 +6,7 @@
 
 .main-photo-cover{
     background-size: cover;
+
     img{
         width: 100%;
         height: 50vh;
@@ -21,6 +22,7 @@
     width: 80%;
     display: flex;
     flex-direction: column;
+
     h2{
         position: relative;
         white-space: nowrap;
@@ -29,10 +31,12 @@
         font-size: $sizeTitle;
         color: $bleuCVB;
         font-weight: 900;
+
         span{
             color: $rougeCVB;
         }
     }
+
     h2::after {
         content: '';
         position: absolute;
@@ -61,11 +65,13 @@
     background-color: $bleuCVB;
     z-index: -1; /* Assurez-vous que l'arrière-plan reste en arrière */
 }
+
 .actualites{
     position: relative;
     margin: 20px auto;
     padding: 10px;
     width: 80%;
+
     h2{
         position: relative;
         white-space: nowrap;
@@ -75,6 +81,7 @@
         color: white;
         font-weight: 900;
     }
+
     h2::after {
         content: '';
         position: absolute;
@@ -96,14 +103,18 @@
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+
         h3{
             color: $bleuCVB;
             font-size: 18px;
             overflow: hidden;
         }
+
         p{
             color: $jauneCVB;
         }
+
         img{
             border-radius: 5px 5px 0 0;
             border-bottom: solid 1px rgba(0, 0, 0, 0.199);
@@ -112,6 +123,7 @@
             // object-fit: none;  géré par le javascript
             object-position: center;          
         }
+
         //filtre image obscur
         .filtre-img{
             background-color: rgba(0,0,0,0.1);
@@ -122,12 +134,13 @@
             top: 0;
             z-index: 1;
         }
-        transition: transform 0.3s ease-in-out;
+
         &:hover{
             transform: scale(1.01);
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         }
     }
+
     .others-actu{
         position: relative;
         width: 35%;
@@ -136,6 +149,7 @@
         height: 60%;
         min-height: 370px;
         white-space: nowrap;
+
         .block-others-actus{
             padding: 12px;
             width: auto;
@@ -144,20 +158,24 @@
             border-radius: 5px;
             overflow: hidden;
             transition: transform 0.3s ease-in-out;
+
             h3{
                 color: $bleuCVB;
                 font-size: 18px;
                 font-weight: 900;
                 overflow: hidden;
             }
+
             p{
                 color: $jauneCVB;
             }
+
             &:hover{
                 transform: scale(1.02);
                 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             }
         }
+
         .all-actus {
             position: absolute;
             bottom: -30px;
@@ -172,7 +190,8 @@
             color: map-get($buttonGold, color);
             border-radius: map-get($buttonGold, border-radius);
             box-shadow: map-get($buttonGold, box-shadow);
-            transition: map-get($buttonGold, transition);        
+            transition: map-get($buttonGold, transition);
+
             &:hover{
                 // transform: scale(1.02);
                 background-color: $jauneHoverCVB;
@@ -191,7 +210,8 @@
     position: relative;
     margin: 20px auto;
     width: 80%;
-    margin-top: 5%;    
+    margin-top: 5%;
+
     h2{
         position: relative;
         margin: $marginTitle;
@@ -200,6 +220,7 @@
         color: $bleuCVB;
         font-weight: 900;
     }
+
     h2::after {
         content: '';
         position: absolute;
@@ -209,6 +230,7 @@
         height: 4px;
         background: $rougeCVB;
     }
+
     img{
         width: 60%;
         max-width: 200px;
@@ -220,6 +242,7 @@
             top: 2px; /* Déplacement vers le bas de 5 pixels */
         }
     }
+
     .button-post{
         bottom: map-get($buttonGold, bottom);
         right: map-get($buttonGold, right);
@@ -232,6 +255,7 @@
         box-shadow: map-get($buttonGold, box-shadow);
         transition: map-get($buttonGold, transition);
         position: relative;
+
         &:hover{
             // transform: scale(1.02);
             left: 1px; /* Déplacement vers la droite de 5 pixels */
@@ -257,11 +281,13 @@
     background-color: $rougeCVB;
     z-index: -1; /* Assurez-vous que l'arrière-plan reste en arrière */
 }
+
 .partenaires{
     position: relative;
     height: 500px;
     margin: 20px auto;
     width: 100%;
+
     h2{
         position: relative;
         margin: 10% 0 5% 2%;
@@ -271,6 +297,7 @@
         font-weight: 900;
         padding-top: 5%;
     }
+
     h2::after {
         content: '';
         position: absolute;
@@ -295,56 +322,70 @@
 @media (max-width: 480px) {
     // _____________________________ Photo intro ____________________________
     .main-photo-cover{
+
         img{
             height: 25vh;
         }
     }
+
     // _____________________________ Scores ____________________________
     .scores{
         width: 95%;
+
         h2{
             margin: 3% 0 3% 0%;
             font-size: $sizeTitleMobile;
         }    
     }
+
     // _____________________________ Atualités ____________________________
     .actualites::after {
         top: 2%; 
         height: 100%;
     }
+
     .actualites{
         margin: 0 auto;
         width: 100%;
+
         h2{
             margin: 10% 0 10% 0%;;
             font-size: $sizeTitleMobile;
         }
+
         .first-actu{
             width: 100%;
             margin: 0 auto;
             min-width: 300px;
             max-width: 480px;
             min-height: 0px;
+
             h3{
                 font-size: 18px;
             }
+
             img{
                 height: 300px;
             }
         }
+
         .others-actu{
             width: 100%;
             min-width: 300px;
             min-height: 0px;
             margin-bottom: 20px;
+
             .block-others-actus{
+
                 h3{
                     font-size: 16px;
                 }
+
                 p{
                     font-size: 14px;
                 }
             }
+
             .all-actus {
                 bottom: -25px;
                 right: -5px;
@@ -352,13 +393,14 @@
             }
             
         }
-    }    
-    // _____________________________ Réseaux ____________________________
+    }   
 
+    // _____________________________ Réseaux ____________________________
     .reseaux{
         margin: 0 auto;
         width: 80%;
         margin-top: 15%;
+
         h2{
             position: relative;
             margin: $marginTitle;
@@ -367,10 +409,12 @@
             color: $bleuCVB;
             font-weight: 900;
         }
+
         img{
             width: 80%;
             margin-top: 10%;
         }
+
         .button-post{
             font-size: 16px;
         }
@@ -381,8 +425,10 @@
         top: -10%; /* Commence à 60% de la hauteur */
         height: 200%;
     }
+
     .partenaires{
         height: 220px;
+        
         h2{
             margin: 0 0 5% 2%;
             font-size: $sizeTitleMobile;
